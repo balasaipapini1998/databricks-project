@@ -15,6 +15,8 @@ output_path = "/mnt/dev/clean/customers"
 # Read data
 df = spark.read.format("delta").load(input_path)
 
+df.rdd.getNumPartitions()
+
 # Validate schema
 if validate_customer_schema(df):
     clean_customer_data(spark, input_path, output_path)
