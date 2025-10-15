@@ -22,6 +22,6 @@ else:
     logger.error("Schema validation failed. Aborting pipeline.")
 
 
-# This is the change
+# This is the new change
 # Change 2
 # change 1
