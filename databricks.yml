@@ -1,0 +1,30 @@
+bundle:
+  name: my-notebook-bundle
+
+targets:
+  qa:
+    workspace:
+      host: https://dbc-c49fc419-0c6d.cloud.databricks.com/
+      root_path: /Workspace/Shared/asset_bundles1
+  dev:
+    workspace:
+      host: https://dbc-c49fc419-0c6d.cloud.databricks.com/
+      root_path: /Workspace/Shared/asset_bundles1
+  prod:
+    workspace:
+      host: https://dbc-c49fc419-0c6d.cloud.databricks.com/
+      root_path: /Workspace/Shared/asset_bundles1
+
+resources:
+  jobs:
+    my_scheduled_job:
+      name: demo-job_<Name>
+      tasks:
+        - task_key: run_notebook
+          notebook_task:
+            notebook_path: /Workspace/Repos/nivedithathota54@gmail.com/databricks-project/notebooks/transformation/First_hands_on
+          # existing_cluster_id: c8d040178df995d9
+      schedule:
+        quartz_cron_expression: "0 30 10 ? * *"
+        timezone_id: Asia/Kolkata
+
