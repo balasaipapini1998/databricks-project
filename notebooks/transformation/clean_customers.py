@@ -5,6 +5,8 @@ from src.validations.schema_checks import validate_customer_schema
 from src.common.logging_utils import get_logger
 
 # Testing comment
+
+# This is the changes i have added
 logger = get_logger("clean_customers")
 
 spark = SparkSession.builder.getOrCreate()
