@@ -5,7 +5,8 @@ from src.transformations.customer_transform import clean_customer_data
 @pytest.fixture(scope="session")
 def spark():
     return SparkSession.builder.master("local[*]").appName("test").getOrCreate()
-
+def hello():
+    return 1
 def test_clean_customer_data(spark, tmp_path):
     input_data = [(1, " Alice ", True), (2, "Bob", False), (1, "Alice", True)]
     df = spark.createDataFrame(input_data, ["customer_id", "customer_name", "is_active"])
